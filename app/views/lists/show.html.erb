@@ -6,4 +6,8 @@
 <% end %>
 </ul>
 <div><%= link_to "Add Movie", new_list_bookmark_path(@list.id) %></div>
-<div><%= link_to "Back to Genres", lists_path(@lists) %></div>
+<div><%= link_to "Back to Genres", lists_path %></div>
+
+<% if @list.photo.attached? %>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
